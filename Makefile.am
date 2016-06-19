@@ -45,6 +45,8 @@ bin_PROGRAMS = jack_load \
 	       jack_wait \
 	       jack_midi_dump \
 	       jack_iodelay \
+	       jack_lsync \
+	       jack_lset \
 	       jack_load_test \
 	       jack_property \
 	       $(EXTRA_TOOLS) \
@@ -120,6 +122,14 @@ jack_midi_dump_LDADD = $(top_builddir)/libjack/libjack.la
 jack_iodelay_SOURCES = iodelay.c
 jack_iodelay_LDFLAGS = @OS_LDFLAGS@
 jack_iodelay_LDADD = $(top_builddir)/libjack/libjack.la
+
+jack_lsync_SOURCES = lsync.c
+jack_lsync_LDFLAGS = @OS_LDFLAGS@
+jack_lsync_LDADD = $(top_builddir)/libjack/libjack.la
+
+jack_lset_SOURCES = lset.c
+jack_lset_LDFLAGS = @OS_LDFLAGS@
+jack_lset_LDADD = $(top_builddir)/libjack/libjack.la
 
 if HAVE_READLINE
 jack_transport_SOURCES = transport.c
